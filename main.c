@@ -1,8 +1,24 @@
+//program to store and calculate the addition/subteraction
+//and the mulitpication/devison of polynominals
+//author: Eoghan Campion, Fionn Murray, Ciran Moroney
+//date: 24/11/19
+
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
+double main()
 {
-    printf("Hello world!\n");
-    return 0;
+
+
+}
+
+void store
+{
+    typedef struct
+    {
+
+
+
+    }
+    poly;
 }
