@@ -8,7 +8,70 @@
 
 double main()
 {
+printf("Hi, Welcome to plooynomial-mania a program by Eoghan, Fionn, Ciran\n") +
+("What action would you like to take. Please enter a number");
+printf("1. Create a poly\n");
+printf("2. Delete a poly\n");
+printf("3. Add 2 polys\n");
+printf("4. subtract 2 polys\n");
+printf("5. Multiply 2 polys\n");
+printf("6. Divide one poly bu another\n");
+printf("7. Return order of a polynomial");
+printf("8. Normalise polynomial");
+printf("9. Print polynomial");
+printf("10. Display all stored polynomials");
 
+int choice;
+scanf("%d",&choice);
+switch(choice)
+    {
+    case 1:
+
+    break;
+
+    case 2:
+
+    break;
+
+    case 3:
+
+    break;
+
+    case 4:
+
+    break;
+
+    case 5:
+
+    break;
+
+    case 6:
+
+    break;
+
+    case 7:
+
+    break;
+
+    case 8:
+
+    break;
+
+    case 9:
+
+    break;
+
+    case 10:
+
+    break;
+
+    default:
+
+    break;
+
+
+
+    }
 
 }
 
@@ -16,26 +79,6 @@ typedef struct pollys
 {
 double coeff [500];//the coefficient of the polly
 double exponent [500];//the exponent of the polly
-enum Operator {1,2,3,4,5};
-//1=add,2=minus,3=multiply,4=divide,5=none(used for last polly only)
 }
 poly;
 
-void double createPolly
-{
-/*
-creates varibles to store the pollys values
-asks the user for the varibles of the polly
-scans the coefficient from the user
-scans the exponent from the user
-scans the operator from the user
-saves the values to an array of pollys
-*/
-double tempCeoff;
-double tempEx;
-int tempOp;
-printf("Input the value of the pollynomials coefficient\n")
-scanf()
-
-
-}
