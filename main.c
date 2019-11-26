@@ -19,68 +19,77 @@ struct poly p1[10],p2[10],p3[10],p4[10],p5[10],p6[10],p7[10],p8[10],p9[10],pa[10
 
 double main()
 {
-printf("Hi, Welcome to plooynomial-mania a program by Eoghan, Fionn, Ciran\n") +
-("What action would you like to take. Please enter a number");
-printf("1. Create a poly\n");
-printf("2. Delete a poly\n");
-printf("3. Add 2 polys\n");
-printf("4. subtract 2 polys\n");
-printf("5. Multiply 2 polys\n");
-printf("6. Divide one poly bu another\n");
-printf("7. Return order of a polynomial");
-printf("8. Normalise polynomial");
-printf("9. Print polynomial");
-printf("10. Display all stored polynomials");
 
-int choice;
-scanf("%d",&choice);
-switch(choice)
+    int loop = 0;
+
+    do
     {
-    case 1:
+        printf("Hi, Welcome to plooynomial-mania a program by Eoghan, Fionn, Ciran\n") +
+        ("What action would you like to take. Please enter a number");
+        printf("1. Create a poly\n");
+        printf("2. Delete a poly\n");
+        printf("3. Add 2 polys\n");
+        printf("4. subtract 2 polys\n");
+        printf("5. Multiply 2 polys\n");
+        printf("6. Divide one poly bu another\n");
+        printf("7. Return order of a polynomial");
+        printf("8. Normalise polynomial");
+        printf("9. Print polynomial");
+        printf("10. Display all stored polynomials");
 
-    break;
+        int choice;
+        scanf("%d",&choice);
+        switch(choice)
+            {
+            case 1:
 
-    case 2:
+            break;
 
-    break;
+            case 2:
 
-    case 3:
+            break;
 
-    break;
+            case 3:
 
-    case 4:
+            break;
 
-    break;
+            case 4:
 
-    case 5:
+            break;
 
-    break;
+            case 5:
 
-    case 6:
+            break;
 
-    break;
+            case 6:
 
-    case 7:
+            break;
 
-    break;
+            case 7:
 
-    case 8:
+            break;
 
-    break;
+            case 8:
 
-    case 9:
+            break;
 
-    break;
+            case 9:
 
-    case 10:
+            break;
 
-    break;
+            case 10:
 
-    default:
+            break;
 
-    break;
+            default:
 
-    }
+            break;
+
+            }
+
+        printf("Are you finished with the program, type 1 for yes and 0 for no");
+        scanf("%d", &loop)
+
+        }while(loop == 1);
 
 }
-
