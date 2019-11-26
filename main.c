@@ -75,10 +75,10 @@ switch(choice)
 
 }
 
-typedef struct pollys
+struct pollys
 {
 double coeff [500];//the coefficient of the polly
-double exponent [500];//the exponent of the polly
+int exponent [500];//the exponent of the polly
 }
 poly;
 
