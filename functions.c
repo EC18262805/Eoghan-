@@ -4,7 +4,6 @@
 struct polly
 {
 int coeff;
-int expo;
 };
 
 int addPoly(struct poly pa1[10], struct poly pa2[10], int t1, int t2, struct poly pa[10])
@@ -16,7 +15,8 @@ int addPoly(struct poly pa1[10], struct poly pa2[10], int t1, int t2, struct pol
     printf("select the second polynomial\n");
     scanf("%d", &choice2);
     
-    //pachoice1[]==pa1[];
+    //pa(choice1)[]==pa1[];
+    //pa(choice2)[]==pa2[];
     
     int i=0;
     int j=0;
@@ -27,7 +27,6 @@ int addPoly(struct poly pa1[10], struct poly pa2[10], int t1, int t2, struct pol
         if(pa1[i].expo==pa2[j].expo)
         {
             pa[k].coeff=pa1[i].coeff + pa2[j].coeff;
-            pa[k].expo=pa1[i].expo;
 
             i++;
             j++;
@@ -36,14 +35,12 @@ int addPoly(struct poly pa1[10], struct poly pa2[10], int t1, int t2, struct pol
         else if(pa1[i].expo>pa2[j].expo)
         {
             pa[k].coeff=pa1[i].coeff;
-            pa[k].expo=pa1[i].expo;
             i++;
             k++;
         }
         else
         {
         pa[k].coeff=pa2[j].coeff;
-        pa[k].expo=pa2[j].expo;
         j++;
         k++;
         }
