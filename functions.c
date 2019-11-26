@@ -9,9 +9,15 @@ int expo;
 
 int addPoly(struct poly pa1[10], struct poly pa2[10], int t1, int t2, struct poly pa[10])
 {
-
+    int choice1;
+    int choice2;
     printf("select the two polynomials you want added togrther\nselect the first polynomial");
-
+    sacnf("%d", &choice1);
+    printf("select the second polynomial\n");
+    scanf("%d", &choice2);
+    
+    //pachoice1[]==pa1[];
+    
     int i=0;
     int j=0;
     int k=0;
