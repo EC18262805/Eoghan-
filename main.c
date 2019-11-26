@@ -6,6 +6,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "functions.c"
+#include "decleration.h"
+
+struct polly
+{
+int coeff;
+int expo;
+}
+
+struct poly p1[10],p2[10],p3[10],p4[10],p5[10],p6[10],p7[10],p8[10],p9[10],pa[10];
+
 double main()
 {
 printf("Hi, Welcome to plooynomial-mania a program by Eoghan, Fionn, Ciran\n") +
@@ -69,16 +80,7 @@ switch(choice)
 
     break;
 
-
-
     }
 
 }
-
-struct pollys
-{
-double coeff [500];//the coefficient of the polly
-int exponent [500];//the exponent of the polly
-}
-poly;
 
