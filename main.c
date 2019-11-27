@@ -12,7 +12,6 @@
 struct polly
 {
 int coeff;
-int expo;
 }
 
 struct poly p1[10],p2[10],p3[10],p4[10],p5[10],p6[10],p7[10],p8[10],p9[10],pa[10];
@@ -42,47 +41,51 @@ double main()
         switch(choice)
             {
             case 1:
-
+                createpoly();
             break;
 
             case 2:
-
+                delPoly();
             break;
 
             case 3:
-
+                addPoly();
             break;
 
             case 4:
-
+                minusPoly();
             break;
 
             case 5:
-
+                mulPoly();
             break;
 
             case 6:
-
+                divPoly();
             break;
 
             case 7:
-
+                ReOrderPoly();
             break;
 
             case 8:
-
+                normalPoly();
             break;
 
             case 9:
-
+                printPoly();
             break;
 
             case 10:
+                displayPoly();
+            break;
 
+            case 11:
+                testPoly();
             break;
 
             default:
-
+                printf("invalid input\n");
             break;
 
             }
