@@ -1,98 +1,129 @@
-//program to store and calculate the addition/subteraction
-//and the mulitpication/devison of polynominals
-//author: Eoghan Campion, Fionn Murray, Ciran Moroney
+//authors: Eoghan Campion, Fionn Murray, Ciaran Moroney
 //date: 24/11/19
+#include<stdio.h>
+#include<malloc.h>
 
-#include <stdio.h>
-#include <stdlib.h>
-
-#include "functions.c"
-#include "decleration.h"
-
-struct polly
+struct link{
+       int coeff;
+       int pow;
+       struct link *next;
+       };
+struct link *poly1=NULL,*poly2=NULL,*poly=NULL;
+void createPoly1(struct link *node)
 {
-int coeff;
+    node->coeff = 3;
+    node->pow = 0;
+    node=node->next;
+    node->next=NULL;
+    node->coeff = 4;
+    node->pow = 2;
+    node=node->next;
+    node->next=NULL;
+    node->coeff = 6;
+    node->pow = 5;
+    node=node->next;
+    node->next=NULL;
+    node->coeff = 7;
+    node->pow = 8;
+
+    return poly1;
 }
 
-struct poly p1[10],p2[10],p3[10],p4[10],p5[10],p6[10],p7[10],p8[10],p9[10],pa[10];
+void createPoly2(struct link *node)
+{
+    node->coeff = 4;
+    node->pow = 1;
+    node=node->next;
+    node->next=NULL;
+    node->coeff = 5;
+    node->pow = 3;
+    node=node->next;
+    node->next=NULL;
+    node->coeff = 1;
+    node->pow = 4;
+    node=node->next;
+    node->next=NULL;
+    node->coeff = 3;
+    node->pow = 6;
 
-double main()
+    return poly2;
+}
+
+
+void show(struct link *node)
+{
+ while(node->next!=NULL)
+ {
+  printf("%dx^%d",node->coeff,node->pow);
+  node=node->next;
+  if(node->next!=NULL)
+   printf("+");
+ }
+}
+void addPoly(struct link *poly1,struct link *poly2,struct link *poly)
+{
+     while(poly1->next &&  poly2->next)
+     {
+      if(poly1->pow>poly2->pow)
+      {
+       poly->pow=poly1->pow;
+       poly->coeff=poly1->coeff;
+       poly1=poly1->next;
+       }
+      else if(poly1->pow<poly2->pow)
+      {
+       poly->pow=poly2->pow;
+       poly->coeff=poly2->coeff;
+       poly2=poly2->next;
+       }
+      else
+      {
+       poly->pow=poly1->pow;
+       poly->coeff=poly1->coeff+poly2->coeff;
+       poly1=poly1->next;
+       poly2=poly2->next;
+       }
+      poly->next=(struct link *)malloc(sizeof(struct link));
+      poly=poly->next;
+      poly->next=NULL;
+     }
+     while(poly1->next || poly2->next)
+     {
+      if(poly1->next)
+      {
+       poly->pow=poly1->pow;
+       poly->coeff=poly1->coeff;
+       poly1=poly1->next;
+       }
+      if(poly2->next)
+      {
+       poly->pow=poly2->pow;
+       poly->coeff=poly2->coeff;
+       poly2=poly2->next;
+       }
+       poly->next=(struct link *)malloc(sizeof(struct link));
+       poly=poly->next;
+       poly->next=NULL;
+       }
+}
+int main()
 {
 
-    int loop = 0;
+    poly1=(struct link *)malloc(sizeof(struct link));
+    poly2=(struct link *)malloc(sizeof(struct link));
+    poly=(struct link *)malloc(sizeof(struct link));
 
-    do
-    {
-        printf("Hi, Welcome to plooynomial-mania a program by Eoghan, Fionn, Ciran\n") +
-        ("What action would you like to take. Please enter a number");
-        printf("1. Create a poly\n");
-        printf("2. Delete a poly\n");
-        printf("3. Add 2 polys\n");
-        printf("4. subtract 2 polys\n");
-        printf("5. Multiply 2 polys\n");
-        printf("6. Divide one poly bu another\n");
-        printf("7. Return order of a polynomial");
-        printf("8. Normalise polynomial");
-        printf("9. Print polynomial");
-        printf("10. Display all stored polynomials");
+    createPoly1(poly1);
+    printf("\nPolynomial 2 is ");
+    show(poly1);
+    createPoly2(poly2);
+    printf("\nPolynomial 2 is ");
+    show(poly2);
 
-        int choice;
-        scanf("%d",&choice);
-        switch(choice)
-            {
-            case 1:
-                createpoly();
-            break;
-
-            case 2:
-                delPoly();
-            break;
-
-            case 3:
-                addPoly();
-            break;
-
-            case 4:
-                minusPoly();
-            break;
-
-            case 5:
-                mulPoly();
-            break;
-
-            case 6:
-                divPoly();
-            break;
-
-            case 7:
-                ReOrderPoly();
-            break;
-
-            case 8:
-                normalPoly();
-            break;
-
-            case 9:
-                printPoly();
-            break;
-
-            case 10:
-                displayPoly();
-            break;
-
-            case 11:
-                testPoly();
-            break;
-
-            default:
-                printf("invalid input\n");
-            break;
-
-            }
-
-        printf("Are you finished with the program, type 1 for yes and 0 for no");
-        scanf("%d", &loop)
-
-        }while(loop == 1);
-
-}
+    addPoly(poly1,poly2,poly);
+    printf("\nAdded polynomial:");
+    show(poly);
+//      printf("\nWanna see me do it again?(y/n): ");
+//      cont=getch();
+//      }
+//      while(cont=='y' || cont=='Y');
