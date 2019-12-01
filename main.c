@@ -127,3 +127,24 @@ int main()
 //      cont=getch();
 //      }
 //      while(cont=='y' || cont=='Y');
+
+       
+void mulPolyt1(struct link *poly1)
+{
+    int mul = 4;
+    
+    while(node->next!=NULL)
+        {
+            node->coeff = mul*(node->coeff);
+        }
+}
+
+void divPolyt1(struct link *poly1)
+{
+    int div = 4;
+    
+    while(node->next!=NULL)
+        {
+            node->coeff = (node->coeff)/(div);
+        }
+}       
