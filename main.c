@@ -129,7 +129,7 @@ int main()
 //      while(cont=='y' || cont=='Y');
 
        
-void mulPolyt1(struct link *poly1)
+void mulPolyt1(struct link *node, struct link *poly1)
 {
     int mul = 4;
     
@@ -139,7 +139,7 @@ void mulPolyt1(struct link *poly1)
         }
 }
 
-void divPolyt1(struct link *poly1)
+void divPolyt1(struct link *node, struct link *poly1)
 {
     int div = 4;
     
