@@ -9,44 +9,46 @@ struct link{
        struct link *next;
        };
 struct link *poly1=NULL,*poly2=NULL,*poly=NULL;
+
 void createPoly1(struct link *node)
 {
-    node->coeff = 3;
+
+    node->coeff =3;
     node->pow = 0;
+    node->next=(struct link *)malloc(sizeof(struct link));
     node=node->next;
-    node->next=NULL;
     node->coeff = 4;
     node->pow = 2;
+    node->next=(struct link *)malloc(sizeof(struct link));
     node=node->next;
-    node->next=NULL;
     node->coeff = 6;
     node->pow = 5;
+    node->next=(struct link *)malloc(sizeof(struct link));
     node=node->next;
-    node->next=NULL;
     node->coeff = 7;
     node->pow = 8;
-
-    return poly1;
+    node->next=(struct link *)malloc(sizeof(struct link));
+    node->next=NULL;
 }
 
 void createPoly2(struct link *node)
 {
     node->coeff = 4;
     node->pow = 1;
+    node->next=(struct link *)malloc(sizeof(struct link));
     node=node->next;
-    node->next=NULL;
     node->coeff = 5;
     node->pow = 3;
+    node->next=(struct link *)malloc(sizeof(struct link));
     node=node->next;
-    node->next=NULL;
     node->coeff = 1;
     node->pow = 4;
+    node->next=(struct link *)malloc(sizeof(struct link));
     node=node->next;
-    node->next=NULL;
     node->coeff = 3;
     node->pow = 6;
-
-    return poly2;
+    node->next=(struct link *)malloc(sizeof(struct link));
+    node->next=NULL;
 }
 
 
@@ -123,28 +125,39 @@ int main()
     addPoly(poly1,poly2,poly);
     printf("\nAdded polynomial:");
     show(poly);
-//      printf("\nWanna see me do it again?(y/n): ");
-//      cont=getch();
-//      }
-//      while(cont=='y' || cont=='Y');
 
-       
+}
+
+
 void mulPolyt1(struct link *node, struct link *poly1)
 {
-    int mul = 4;
-    
+    double mul = 4;
+
     while(node->next!=NULL)
         {
             node->coeff = mul*(node->coeff);
         }
+    show(poly1);
 }
 
 void divPolyt1(struct link *node, struct link *poly1)
 {
     int div = 4;
-    
+
     while(node->next!=NULL)
         {
             node->coeff = (node->coeff)/(div);
         }
-}       
+}
+
+void normalPolyt1(struct link *node, struct link *poly2)
+{
+
+
+
+
+
+}
+
+
+
