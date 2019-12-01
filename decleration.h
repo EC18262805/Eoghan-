@@ -1,7 +1,13 @@
-#ifndef HEADER_FILE
+void mulPoly(struct link *polyMul, struct link *poly1,struct link *node)
+{
+    double mul = 4;
 
-int readPoly(struct poly[]);
-int addPoly(struct poly pa1[10], struct poly pa2[10], int t1, int t2, struct poly pa[10]);
-void displayPoly(struct poly p[10], int term);
-
-#endif
+    while(node->next!= NULL)
+        {
+            polyMul->next = (struct link *)malloc(sizeof(struct link));
+            polyMul->coeff = (poly1->coeff*mul);
+            polyMul->pow=poly1->pow;
+            polyMul=polyMul->next;
+            polyMul->next=NULL;
+        }
+}
