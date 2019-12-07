@@ -1,6 +1,16 @@
 sudo code for functions 
 
 /////////////////////////////////////////////
+//
+//  struct 
+//    double coeff
+//    int pow
+//    struct link
+//
+////////////////////////////////////////////
+
+
+/////////////////////////////////////////////
 //mulPoly() sudo code
 //function to multiply all the coefficents of a polynomial 
 //
@@ -8,20 +18,26 @@ sudo code for functions
 //declare varible for multipication = mul
 //
 //  while next node is not NULL
-//	node = node*mul  
-//  print new array
+//	  node = node*mul
+//    pow = node
+//
+//    next node 
+//
 /////////////////////////////////////////////
 
 /////////////////////////////////////////////
-//mulPoly() sudo code
+//divPoly() sudo code
 //function to divide all the coefficents of a polynomial 
 //
 //-------------------------------------------
 //declare varible for division = div
 //
 //  while next node is not NULL
-//	node = node/div  
-//  print new array
+//	  node = node/div
+//    pow = node
+//
+//    next node 
+//
 /////////////////////////////////////////////
 
 //////////////////////////////////////////////
@@ -29,12 +45,14 @@ sudo code for functions
 // function to normalise the polynomial 
 //
 //---------------------------------------------
-// decalre a varible that is eqaul to the coefficent of the highest exponent = norm
+// while there is a next node
+//    if next node is NULL
+//      coeff=norm
 //
-//   for i is less than the max exponent 
-//	divide the the coeffient of the i'th exopnent by norm
+//    node=next node
 //
-// return the new array
+//   run divPoly with norm
+//
 //////////////////////////////////////////////
 
 //////////////////////////////////////////////
@@ -73,10 +91,10 @@ sudo code for functions
 //
 //-------------------------------------------
 //
-// while (next node != NULL)
+// while next node is not NULL
 //	print(node)
 //	current node = next node
-//	if (next node != NULL)
+//	if next node is  NULL)
 //		print "+"
 ////////////////////////////////////////////
 
@@ -87,10 +105,48 @@ sudo code for functions
 //
 //------------------------------------------
 //
-// while (poly1->next and poly2->next)
-//	poly1->pow=poly->pow
+//    while poly1->next and poly2->next
+//         if poly1 powwe is greater poly2 power
+//         {
+//          polySub->pow = poly1->pow
+//          polySub->coeff = poly1->coeff
+//          poly1=poly1->next
+//         }
+//          else if poly1 power less than poly2 power
+//         {
+//          polySub->pow=poly2->pow
+//          polySub->coeff=poly2->coeff
+//          poly2=poly2->next
+//         }
+//          else
+//         {
+//          polySub->pow=poly1->pow
+//          polySub->coeff=poly1->coeff-poly2->coeff
+//          poly1=poly1->next
+//          poly2=poly2->next
+//         }
+//          polySub->next=allocate size
+//          polySub=polySub->next
+//          polySub->next=NULL
+//         }
+//          while poly1->next or poly2->next
+//         {
+//          if poly1->next
+//         {
+//          polySub->pow=poly1->pow
+//          polySub->coeff=poly1->coeff
+//          poly1=poly1->next
+//         }
+//         if poly2->next
+//         {
+//          polySub->pow=poly2->pow
+//          polySub->coeff=poly2->coeff
+//          poly2=poly2->next
+//         }
+//          polySub->next=allocate size
+//          polySub=polySub->next;
+//          polySub->next=NULL
+//         
+//    }
 //
-//
-//
-//
-//
+/////////////////////////////////////////////////////////////
