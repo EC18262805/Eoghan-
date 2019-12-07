@@ -1,0 +1,96 @@
+sudo code for functions 
+
+/////////////////////////////////////////////
+//mulPoly() sudo code
+//function to multiply all the coefficents of a polynomial 
+//
+//-------------------------------------------
+//declare varible for multipication = mul
+//
+//  while next node is not NULL
+//	node = node*mul  
+//  print new array
+/////////////////////////////////////////////
+
+/////////////////////////////////////////////
+//mulPoly() sudo code
+//function to divide all the coefficents of a polynomial 
+//
+//-------------------------------------------
+//declare varible for division = div
+//
+//  while next node is not NULL
+//	node = node/div  
+//  print new array
+/////////////////////////////////////////////
+
+//////////////////////////////////////////////
+// normPoly() sudo code
+// function to normalise the polynomial 
+//
+//---------------------------------------------
+// decalre a varible that is eqaul to the coefficent of the highest exponent = norm
+//
+//   for i is less than the max exponent 
+//	divide the the coeffient of the i'th exopnent by norm
+//
+// return the new array
+//////////////////////////////////////////////
+
+//////////////////////////////////////////////
+// ReOrderPoly()
+// function to return order to a polynomial
+//
+//-----------------------------------------------
+//  declare the varible ord that is equale to the max order of the polynomial
+//
+//  for ord is greater that 0
+//	print the coeffient and exponent of the ord'th exponent
+//
+//////////////////////////////////////////////
+
+
+///////////////////////////////////////////////
+// void createPoly(struct link *node)
+// function to crate a poly
+//
+//--------------------------------------------- 
+//
+//  node->coeff = 3
+//  node->exop = 0
+//  node->next=(struct link *)malloc(sizeof(struct link));
+//  node=node->next;
+// 
+//  repeat for other values 	
+//
+/////////////////////////////////////////////
+
+
+/////////////////////////////////////////////
+//
+// void displayPoly(struct link *node)
+// function to print a polynomial to sdout
+//
+//-------------------------------------------
+//
+// while (next node != NULL)
+//	print(node)
+//	current node = next node
+//	if (next node != NULL)
+//		print "+"
+////////////////////////////////////////////
+
+////////////////////////////////////////////
+//
+// void addPoly(struct link *poly1,struct link *poly2,struct link  *poly)
+// function to add two polynomials together
+//
+//------------------------------------------
+//
+// while (poly1->next and poly2->next)
+//	poly1->pow=poly->pow
+//
+//
+//
+//
+//
