@@ -8,7 +8,13 @@ struct link{
        int pow;
        struct link *next;
        };
-struct link *poly1=NULL,*poly2=NULL,*poly=NULL;
+
+
+struct link *poly1=NULL,*poly2=NULL,*polyAdd=NULL, *polyMul=NULL, *polyMulCorrect=NULL;
+
+void mulPoly(struct link *polyMul, struct link *poly1);
+void createPolyMulCorrect(struct link *node);
+void testMulpoly();
 
 void createPoly1(struct link *node)
 {
@@ -17,17 +23,21 @@ void createPoly1(struct link *node)
     node->pow = 0;
     node->next=(struct link *)malloc(sizeof(struct link));
     node=node->next;
+    node->next=NULL;
     node->coeff = 4;
-    node->pow = 2;
+    node->pow = 3;
     node->next=(struct link *)malloc(sizeof(struct link));
     node=node->next;
+    node->next=NULL;
     node->coeff = 6;
     node->pow = 5;
     node->next=(struct link *)malloc(sizeof(struct link));
     node=node->next;
+    node->next=NULL;
     node->coeff = 7;
     node->pow = 8;
     node->next=(struct link *)malloc(sizeof(struct link));
+    node=node->next;
     node->next=NULL;
 }
 
@@ -37,17 +47,21 @@ void createPoly2(struct link *node)
     node->pow = 1;
     node->next=(struct link *)malloc(sizeof(struct link));
     node=node->next;
+    node->next=NULL;
     node->coeff = 5;
     node->pow = 3;
     node->next=(struct link *)malloc(sizeof(struct link));
     node=node->next;
+    node->next=NULL;
     node->coeff = 1;
     node->pow = 4;
     node->next=(struct link *)malloc(sizeof(struct link));
     node=node->next;
+    node->next=NULL;
     node->coeff = 3;
     node->pow = 6;
     node->next=(struct link *)malloc(sizeof(struct link));
+    node=node->next;
     node->next=NULL;
 }
 
@@ -59,7 +73,7 @@ void show(struct link *node)
   printf("%dx^%d",node->coeff,node->pow);
   node=node->next;
   if(node->next!=NULL)
-   printf("+");
+   printf(" + ");
  }
 }
 void addPoly(struct link *poly1,struct link *poly2,struct link *poly)
@@ -111,53 +125,140 @@ void addPoly(struct link *poly1,struct link *poly2,struct link *poly)
 int main()
 {
 
-    poly1=(struct link *)malloc(sizeof(struct link));
+
     poly2=(struct link *)malloc(sizeof(struct link));
-    poly=(struct link *)malloc(sizeof(struct link));
+    poly1=(struct link *)malloc(sizeof(struct link));
+    polyMul=(struct link *)malloc(sizeof(struct link));
+    polyMulCorrect=(struct link *)malloc(sizeof(struct link));
 
     createPoly1(poly1);
-    printf("\nPolynomial 2 is ");
+    printf("\n\nFirst polynomial:");
     show(poly1);
+
     createPoly2(poly2);
-    printf("\nPolynomial 2 is ");
+    printf("\n\nSecond polynomial:");
     show(poly2);
 
-    addPoly(poly1,poly2,poly);
-    printf("\nAdded polynomial:");
-    show(poly);
+    mulPoly(poly1,polyMul);
+    printf("\n\nmultiplied Polynomial:");
+    show(polyMul);
 
+    createPolyMulCorrect(polyMulCorrect);
+    printf("\n\nCorrect Answer:");
+    show(polyMulCorrect);
+
+    if(polyMul->coeff==polyMulCorrect->coeff && polyMul->pow==polyMulCorrect->pow)
+    {
+        printf("\n\nTest Passed");
+    }
+    else
+    {
+        printf("\n\nTest Failed");
+    }
 }
 
 
-void mulPolyt1(struct link *node, struct link *poly1)
+void mulPoly(struct link *polyMul, struct link *poly1)
 {
     double mul = 4;
+    double temp;
+    int temp2;
 
-    while(node->next!=NULL)
+    while(poly1->next)
         {
-            node->coeff = mul*(node->coeff);
+        temp = poly1->coeff*mul;
+        temp2 = poly1->pow;
+
+        polyMul->coeff = temp;
+        polyMul->pow = temp2;
+
+        polyMul->next = (struct link*)malloc(sizeof(struct link));
+        polyMul=polyMul->next;
         }
-    show(poly1);
+
 }
 
-void divPolyt1(struct link *node, struct link *poly1)
+void createPolyMulCorrect(struct link *node)
 {
-    int div = 4;
-
-    while(node->next!=NULL)
-        {
-            node->coeff = (node->coeff)/(div);
-        }
+    node->coeff = 12;
+    node->pow = 0;
+    node->next=(struct link *)malloc(sizeof(struct link));
+    node=node->next;
+    node->next=NULL;
+    node->coeff = 16;
+    node->pow = 3;
+    node->next=(struct link *)malloc(sizeof(struct link));
+    node=node->next;
+    node->next=NULL;
+    node->coeff = 24;
+    node->pow = 5;
+    node->next=(struct link *)malloc(sizeof(struct link));
+    node=node->next;
+    node->next=NULL;
+    node->coeff = 28;
+    node->pow = 8;
+    node->next=(struct link *)malloc(sizeof(struct link));
+    node=node->next;
+    node->next=NULL;
 }
 
-void normalPolyt1(struct link *node, struct link *poly2)
-{
+//void testMulpoly()
+//{
+//    poly1=(struct link *)malloc(sizeof(struct link));
+//    polyMul=(struct link *)malloc(sizeof(struct link));
+//    polyMulCorrect=(struct link *)malloc(sizeof(struct link));
+//
+//    createPoly1(poly1);
+//    printf("\nFirst polynomial:");
+//    show(poly1);
+//
+//    createPoly2(poly2);
+//    printf("\nSecond polynomial:");
+//    show(poly2);
+//
+//    mulPoly(poly1,polyMul);
+//    printf("\nmultiplied Polynomial:");
+//    show(polyMul);
+//
+//    createPolyMulCorrect(polyMulCorrect);
+//    printf("\nCorrect Answer:");
+//    show(polyMulCorrect);
+//
+//    if(polyMul->coeff==polyMulCorrect->coeff && polyMul->pow==polyMulCorrect->pow)
+//    {
+//        printf("\nTest Passed");
+//    }
+//    else
+//    {
+//        printf("\nTest Failed");
+//    }
+//
+//}
+
+//void divPolyt1(struct link *node, struct link *poly1)
+//{
+//    int div = 4;
+//
+//    while(node->next!=NULL)
+//        {
+//            node->coeff = (node->coeff)/(div);
+//        }
+//}
+//
+//void normalPolyt1(struct link *node, struct link *poly2)
+//{
+//
+//
+//
+//
+//
+//}
 
 
 
 
 
-}
+
 
 
 
